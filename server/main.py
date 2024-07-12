@@ -8,7 +8,7 @@ import os
 app = create_app()
 
 def run_flask():
-    app.run(debug=True)
+    app.run(debug=True, host='127.0.0.1', port=5000)
 
 # Флаг для завершения работы
 stop_event = threading.Event()

@@ -19,7 +19,7 @@ const SeanceList = () => {
 
   useEffect(() => {
     const fetchSeances = async () => {
-      const response = await fetch('http://127.0.0.1:5000/api/seances', {
+      const response = await fetch('/api/api/seances', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ const SeanceList = () => {
     };
 
     const fetchBeacons = async () => {
-      const response = await fetch('http://127.0.0.1:5000/api/beacons', {
+      const response = await fetch('/api/api/beacons', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const SeanceList = () => {
     };
 
     const fetchUsers = async () => {
-      const response = await fetch('http://127.0.0.1:5000/users', {
+      const response = await fetch('/api/users', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const SeanceList = () => {
   const handleAddSeance = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/seances', {
+      const response = await fetch('/api/api/seances', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const SeanceList = () => {
   const handleUpdateSeance = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/seances/${selectedSeance.id}`, {
+      const response = await fetch(`/api/api/seances/${selectedSeance.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ const SeanceList = () => {
 
   const handleDeactivateSeance = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/seances/${selectedSeance.id}`, {
+      const response = await fetch(`/api/api/seances/${selectedSeance.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

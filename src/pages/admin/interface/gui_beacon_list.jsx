@@ -12,7 +12,7 @@ const BeaconList = () => {
   useEffect(() => {
     const fetchBeacons = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/beacons', {
+        const response = await fetch('/api/api/beacons', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const BeaconList = () => {
   const handleAddBeacon = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/beacons', {
+      const response = await fetch('/api/api/beacons', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const BeaconList = () => {
 
       const data = await response.json();
       if (response.ok) {
-        const updatedResponse = await fetch('http://127.0.0.1:5000/api/beacons', {
+        const updatedResponse = await fetch('/api/api/beacons', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const BeaconList = () => {
 
   const handleUpdateBeacon = async (e) => {
     e.preventDefault();
-    const response = await fetch(`http://127.0.0.1:5000/api/beacons/${selectedBeacon.id}`, {
+    const response = await fetch(`/api/api/beacons/${selectedBeacon.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const BeaconList = () => {
 
   const handleDeleteBeacon = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/beacons/${selectedBeacon.id}`, {
+      const response = await fetch(`/api/api/beacons/${selectedBeacon.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

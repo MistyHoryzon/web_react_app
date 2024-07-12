@@ -11,7 +11,7 @@ const AdminPage = () => {
 
   useEffect(() => {
     const fetchAdminData = async () => {
-      const response = await fetch('http://127.0.0.1:5000/admin', {
+      const response = await fetch('/api/admin', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

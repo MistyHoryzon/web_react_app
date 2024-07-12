@@ -56,7 +56,7 @@ const MapComponent = () => {
 
   const fetchMarkers = async (seanceId) => {
     try {
-      const url = new URL('http://127.0.0.1:5000/positions');
+      const url = new URL('/api/positions');
       if (appliedStartDate) url.searchParams.append('start', appliedStartDate);
       if (appliedEndDate) url.searchParams.append('end', appliedEndDate);
       if (seanceId) url.searchParams.append('seanceId', seanceId);
@@ -76,7 +76,7 @@ const MapComponent = () => {
 
   const fetchLatestPositions = async () => {
     try {
-      const url = new URL('http://127.0.0.1:5000/latest_positions');
+      const url = new URL('/api/latest_positions');
   
       const response = await fetch(url.toString(), {
         headers: {
@@ -93,7 +93,7 @@ const MapComponent = () => {
 
   const fetchSeances = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/seances', {
+      const response = await fetch('/api/api/seances', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('access_token')}`
         }
